@@ -1,0 +1,34 @@
+@use "../../global" as *;
+
+.big-yellow-btn {
+   position: relative;
+   width: 18vw;
+   height: 9vh;
+   background: $siteYellow;
+   box-shadow: 0 15rem 30rem -10rem rgba(black, 0.3);
+   transition: all 0.2s;
+
+   h6 {
+      font-size: 1.4vw;
+   }
+
+   &:hover {
+      transform: translateY(10rem);
+      box-shadow: 0 20rem 30rem -10rem rgba(black, 0);
+
+      .pulse {
+         transform: scale(1.2, 1.6);
+         opacity: 0;
+      }
+   }
+}
+
+@media only screen and (max-width: 1024px) {
+   .big-yellow-btn {
+      width: 80%;
+
+      h6 {
+         font-size: 22rem;
+      }
+   }
+}

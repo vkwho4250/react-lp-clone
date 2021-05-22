@@ -1,0 +1,41 @@
+@use "../../global" as *;
+
+$button-size: 25rem;
+
+.slide-btn {
+   width: $button-size;
+   overflow: hidden;
+
+   .text-container {
+      @include flex-container(flex-start, center);
+      width: fit-content;
+
+      .left {
+         transform: scale(-1);
+      }
+   }
+
+   .text-container.left {
+      @include flex-container(flex-end, center);
+   }
+
+   h3 {
+      width: $button-size;
+      font-size: 22rem;
+      writing-mode: vertical-rl;
+      order: 2;
+      transition: all 1s;
+
+      &.secondary-color {
+         color: $siteYellow;
+      }
+   }
+
+   .secondary-color.left {
+      order: 1;
+   }
+
+   .thin {
+      font-weight: 300;
+   }
+}

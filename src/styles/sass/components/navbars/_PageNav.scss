@@ -1,0 +1,5 @@
+@use "../../global" as *;
+
+#page-navigation {
+   @include flex-container(center, center, column);
+}

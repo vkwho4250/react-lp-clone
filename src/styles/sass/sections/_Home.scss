@@ -1,0 +1,90 @@
+@use "../global" as *;
+
+.home {
+   background-image: url("../../assets/mountain-landscape.jpg");
+   background-size: cover;
+}
+
+.side-badges {
+   position: absolute;
+   top: 55rem;
+   left: 0;
+}
+
+.triangle {
+   position: absolute;
+   top: 5vh;
+   width: 85%;
+   height: 85%;
+   fill: $siteYellow;
+   stroke: $siteYellow;
+   stroke-width: 5rem;
+}
+
+.mouse-scroll {
+   position: absolute;
+   bottom: 2vh;
+   width: 27rem;
+   height: 40rem;
+   border: 2rem solid white;
+   border-radius: 18rem;
+   @include flex-container(center, flex-start);
+
+   .scroll {
+      margin-top: 3.5rem;
+      width: 2rem;
+      height: 8rem;
+      background: white;
+   }
+}
+
+.title-container {
+   position: absolute;
+   text-align: center;
+   padding-top: 10vh;
+
+   h1 {
+      font-size: 16vw;
+      line-height: 80%;
+      color: white;
+   }
+
+   h4 {
+      font-size: calc(max(1vw, 14rem));
+      color: white;
+      font-weight: 600;
+      letter-spacing: -1rem;
+      text-transform: uppercase;
+      text-shadow: 2rem 2rem black;
+   }
+
+   &.silhouette {
+      transform: scale(1.15);
+      opacity: 0.3;
+      padding-bottom: 3vh;
+
+      h1 {
+         line-height: 85%;
+      }
+   }
+}
+
+.lift-panel {
+   position: relative;
+   z-index: 5;
+   transition: 1s all;
+   &.border {
+      border-right: 0.5rem solid black;
+   }
+
+   &:hover {
+      box-shadow: 0 0 30rem 20rem rgba(black, 0.4);
+   }
+}
+
+@media only screen and (max-width: 1024px) {
+   .panel-3,
+   .panel-4 {
+      display: none;
+   }
+}

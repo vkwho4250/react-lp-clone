@@ -1,0 +1,146 @@
+@use "../global" as *;
+
+#contact-page {
+   .form-container {
+      padding: 0 5%;
+   }
+}
+
+.contact {
+   overflow: hidden;
+
+   .big-yellow-btn {
+      &:hover {
+         transform: translateY(0);
+      }
+   }
+}
+
+header {
+   position: relative;
+   width: 100%;
+   height: 40%;
+   padding-top: 15vh;
+   @include flex-container(center, flex-start);
+
+   h1 {
+      position: absolute;
+      top: 15vh;
+      font-size: 14vw;
+      line-height: 70%;
+
+      &:first-child {
+         transform-origin: center bottom;
+         transform: scale(1.2);
+         letter-spacing: 10rem;
+         opacity: 0.03;
+      }
+   }
+
+   .container {
+      position: absolute;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      @include flex-container(center, flex-start);
+   }
+
+   .triangle {
+      top: 15rem;
+      stroke-width: 0;
+      height: 110%;
+   }
+
+   .floating-mountains {
+      position: absolute;
+      top: 5vh;
+      transform: scale(1.1);
+   }
+}
+
+.contact-details {
+   position: relative;
+
+   h2 {
+      font-size: 35rem;
+      line-height: initial;
+   }
+
+   h5 {
+      font-size: calc(max(0.9vw, 16rem));
+      width: 55%;
+      margin: 4vh 0 3vh;
+   }
+
+   &:first-child {
+      padding: 2vh 0 0 7vw;
+
+      .big-yellow-btn {
+         width: 45%;
+      }
+   }
+}
+.contact-method-container {
+   @include flex-container(space-around, center);
+   margin: 3vh 0;
+}
+
+.contact-method {
+   height: 9vh;
+   overflow: hidden;
+
+   h3 {
+      font-size: 23rem;
+   }
+
+   a {
+      font-size: 1.8vh;
+      cursor: pointer;
+      border-bottom: 2rem solid $siteYellow;
+      transition: all 0.8s ease-in;
+
+      &:hover {
+         padding-bottom: 5rem;
+      }
+   }
+
+   .contact-info {
+      font-size: 1.8vh;
+      display: inline-block;
+      margin: 1vh 0;
+      color: $description-gray;
+      padding-bottom: 12vh;
+   }
+}
+
+.input-details {
+   position: absolute;
+   top: 5%;
+   right: 5%;
+   width: 70%;
+}
+
+@media only screen and (max-width: 1024px) {
+   #contact-page {
+      .fixed-form {
+         visibility: hidden;
+      }
+   }
+
+   header {
+      .triangle {
+         display: none;
+      }
+
+      svg {
+         width: 80vw;
+      }
+   }
+
+   .input-details {
+      position: relative;
+      width: 100%;
+      top: auto;
+      right: auto;
+   }
+}

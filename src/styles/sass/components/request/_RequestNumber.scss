@@ -1,0 +1,35 @@
+@use "../../global" as *;
+
+$box-width: 220rem;
+
+.request-number {
+   width: $box-width;
+   @include flex-container(center, center);
+   overflow: hidden;
+   margin: 10rem 30rem;
+
+   h5 {
+      position: absolute;
+      color: white;
+      font-size: 22rem;
+   }
+}
+
+.line-container {
+   position: relative;
+   left: $box-width / 2 + 10rem;
+   height: 40rem;
+   width: $box-width * 2 + 20;
+   @include flex-container(flex-start, center);
+
+   .number-line {
+      height: 100%;
+      width: $box-width;
+      border-bottom: 2rem solid white;
+      margin-right: 10rem;
+
+      &:last-child {
+         border-bottom: 2rem solid $siteYellow;
+      }
+   }
+}

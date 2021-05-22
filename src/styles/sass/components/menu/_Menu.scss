@@ -1,0 +1,40 @@
+@use "../../global" as *;
+
+#menu {
+   position: fixed;
+   left: -2500rem;
+   z-index: 99;
+   background: $siteYellow;
+   width: 100vw;
+   height: 100vh;
+
+   #menu-btn,
+   #page-navigation {
+      display: none;
+   }
+
+   .logo {
+      fill: black;
+   }
+
+   .primary-text {
+      color: black;
+   }
+
+   .secondary-color {
+      color: white;
+   }
+
+   .sidebar {
+      position: absolute;
+   }
+}
+
+@media only screen and (max-width: 1024px) {
+   #menu {
+      @include flex-container(center, space-between, column);
+      .page-right {
+         width: 150%;
+      }
+   }
+}

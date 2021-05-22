@@ -1,0 +1,41 @@
+@use "../../global" as *;
+
+#top-nav-bar {
+   position: fixed;
+   z-index: 99;
+   width: 100vw;
+   height: 50rem;
+   background: rgba($medium-gray, 0.95);
+
+   padding: 0 5%;
+   display: none;
+
+   svg {
+      height: 40%;
+      fill: white;
+   }
+
+   button {
+      width: 40rem;
+      height: 40%;
+      overflow: hidden;
+
+      span {
+         display: block;
+         width: 100%;
+         border-top: 1rem solid white;
+         margin-bottom: 8rem;
+
+         &:nth-child(2) {
+            position: relative;
+            margin-left: 20%;
+         }
+      }
+   }
+}
+
+@media only screen and (max-width: 1024px) {
+   #top-nav-bar {
+      @include flex-container(space-between, center);
+   }
+}

@@ -1,0 +1,79 @@
+@use "../../global" as *;
+
+.project-panel {
+   position: relative;
+   height: 100%;
+   width: 100%;
+   @include flex-container(flex-start, center, column);
+   text-align: center;
+   overflow: hidden;
+
+   &:hover .project-image {
+      filter: brightnesS(1);
+      transform: scale(1.05);
+   }
+}
+
+.project-image {
+   filter: brightness(0.3);
+   transition: all 0.5s;
+   height: 100%;
+}
+
+.project-details {
+   position: absolute;
+   top: 0;
+   z-index: 5;
+
+   h1 {
+      font-size: 45vh;
+      background: linear-gradient(white, $light-gray);
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      height: 45vh;
+      line-height: 100%;
+   }
+
+   h2 {
+      font-size: 2vw;
+      height: 10vh;
+      text-shadow: 0 5rem 5rem black;
+   }
+
+   p {
+      color: white;
+      font-size: 16rem;
+      text-shadow: 0 2rem 2rem black;
+   }
+}
+
+.border {
+   border-right: 1rem solid black;
+}
+
+@media only screen and (max-width: 1024px) {
+   .project-panel {
+      position: relative;
+
+      h1 {
+         display: none;
+      }
+   }
+
+   .project-details {
+      position: absolute;
+      height: 100%;
+      @include flex-container(center, center, column);
+      top: auto;
+
+      h2 {
+         height: auto;
+         font-size: 4vw;
+      }
+   }
+
+   .project-image {
+      width: 100%;
+      height: auto;
+   }
+}

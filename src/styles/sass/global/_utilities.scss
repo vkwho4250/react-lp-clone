@@ -1,0 +1,32 @@
+@use "./abstracts" as *;
+
+// --- visibility ---
+
+.no-display {
+   display: none;
+}
+
+// --- color modes ---
+
+.dark-mode {
+   .logo {
+      fill: white;
+   }
+
+   .circle {
+      background: white;
+   }
+
+   .yellow {
+      background: $siteYellow;
+   }
+
+   .primary-text,
+   .page-num-container h4 {
+      color: white;
+   }
+
+   .line {
+      border-right: 1rem solid white;
+   }
+}

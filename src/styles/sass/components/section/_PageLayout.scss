@@ -1,0 +1,89 @@
+@use "../../global" as *;
+
+$description-indent: 20%;
+
+.page-default {
+   height: 100%;
+
+   h2 {
+      font-size: 6.8vw;
+      line-height: 95%;
+   }
+
+   .heading-text {
+      margin: 7vh 5vw;
+
+      h2:nth-child(2) {
+         padding-left: 5vw;
+      }
+   }
+
+   .yellow-btn-container {
+      position: absolute;
+      bottom: 15vh;
+      left: $description-indent;
+   }
+
+   .description {
+      position: absolute;
+      width: 22vw;
+      top: 50%;
+      left: $description-indent;
+   }
+
+   .circle-btn {
+      position: absolute;
+      top: 3vh;
+      right: 4vh;
+   }
+}
+
+.dark {
+   background: $medium-gray;
+
+   h2 {
+      color: white;
+   }
+
+   .description {
+      color: $light-gray;
+   }
+}
+
+@media only screen and (max-width: 1024px) {
+   .page-default {
+      @include flex-container(flex-start, center, column);
+      height: fit-content;
+
+      h2 {
+         font-size: 10vw;
+         text-align: center;
+
+         &:last-child {
+            padding: 0;
+         }
+      }
+
+      .heading-text {
+         margin: 5vh 0 0;
+         text-align: center;
+
+         h2:nth-child(2) {
+            padding: 0;
+         }
+      }
+
+      .description {
+         position: relative;
+         top: 2vh;
+         left: auto;
+         width: 90%;
+         text-align: center;
+         margin-bottom: 5vh;
+      }
+
+      .big-yellow-btn {
+         display: none;
+      }
+   }
+}

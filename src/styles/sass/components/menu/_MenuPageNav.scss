@@ -1,0 +1,44 @@
+@use "../../global" as *;
+
+$list-width: 25vw;
+
+.menu-page-nav {
+   position: relative;
+   width: $list-width;
+   margin: 3vh 0;
+   @include flex-container(flex-start, center);
+
+   h2 {
+      font-size: calc(max(4vw, 18rem));
+      text-align: right;
+      width: $list-width;
+      line-height: 70%;
+   }
+
+   h3 {
+      font-size: calc(max(2vw, 12rem));
+      writing-mode: vertical-lr;
+      font-weight: 400;
+      cursor: pointer;
+      margin-left: 20%;
+   }
+}
+
+.bottom-line {
+   position: absolute;
+   top: 0;
+   left: $list-width * (0.7 - 0.15);
+   border-bottom: 1rem solid black;
+   height: 100%;
+}
+
+@media only screen and (max-width: 1024px) {
+   .menu-page-nav {
+      width: 100%;
+
+      h3,
+      .bottom-line {
+         display: none;
+      }
+   }
+}

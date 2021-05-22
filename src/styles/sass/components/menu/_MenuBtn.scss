@@ -1,0 +1,26 @@
+@use "../../global" as *;
+
+$menu-height: 40rem;
+
+#menu-btn {
+   width: $menu-height;
+   transform: scale(-1);
+   overflow: hidden;
+   height: 200rem;
+
+   h1 {
+      writing-mode: vertical-lr;
+      margin: 2rem 0;
+   }
+
+   div {
+      position: absolute;
+      bottom: 50%;
+   }
+}
+
+.yellow-menu {
+   h1 {
+      color: $siteYellow;
+   }
+}

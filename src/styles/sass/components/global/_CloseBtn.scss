@@ -1,0 +1,42 @@
+@use "../../global" as *;
+
+.close-btn {
+   @include flex-container(center, center, column);
+   position: absolute;
+
+   width: 5vw;
+   height: 100vh;
+}
+
+.x-box {
+   z-index: 99;
+   width: inherit;
+   height: 2.5vw;
+   @include flex-container(center, center, column);
+   cursor: pointer;
+
+   &:hover {
+      .x-line {
+         transform: rotate(0);
+         background: white;
+      }
+   }
+}
+
+.x-line {
+   position: absolute;
+   width: 50%;
+   height: 3rem;
+   margin: 5rem;
+   background: black;
+
+   transition: all 0.3s ease-in;
+
+   &:first-child {
+      transform: rotate(45deg);
+   }
+
+   &:last-child {
+      transform: rotate(-45deg);
+   }
+}

@@ -1,0 +1,43 @@
+@use "../global" as *;
+
+.awards-list-container {
+   position: absolute;
+   top: 0;
+   right: 0;
+   width: 50%;
+   height: 100%;
+   padding: 10vh 0 0 6vw;
+
+   @include flex-container(center, flex-start, column);
+}
+
+.award {
+   color: $light-gray;
+   @include flex-container(flex-start, center);
+   width: 80%;
+   margin-bottom: 6vh;
+
+   h1 {
+      font-size: calc(max(2vw, 20rem));
+      width: 50%;
+
+      span {
+         color: $siteYellow;
+      }
+   }
+
+   p {
+      font-size: calc(max(1.4vw, 12rem));
+   }
+}
+
+@media only screen and (max-width: 1024px) {
+   .awards-list-container {
+      margin-top: 5vh;
+      width: 75%;
+
+      h1 {
+         width: 40%;
+      }
+   }
+}

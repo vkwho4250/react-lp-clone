@@ -1,0 +1,26 @@
+@use "../../global" as *;
+
+$box-size: 20rem;
+
+.option-item {
+   @include flex-container(flex-start, flex-start);
+   margin-top: 15rem;
+   cursor: pointer;
+
+   &:hover p {
+      margin-left: 15rem;
+   }
+
+   p {
+      margin-left: 10rem;
+      color: white;
+      font-size: 18rem;
+      transition: all 0.4s;
+   }
+}
+
+.checkbox {
+   width: $box-size;
+   height: $box-size;
+   border: 2rem solid white;
+}

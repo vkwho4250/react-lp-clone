@@ -1,0 +1,49 @@
+@use "../../global" as *;
+
+#contact-form {
+   padding-top: 3%;
+   position: absolute;
+   right: 0;
+   top: 0;
+   width: 45%;
+
+   label:focus-within {
+      color: $siteYellow;
+
+      input {
+         border-bottom: 2rem solid $siteYellow;
+      }
+   }
+
+   label,
+   input,
+   textarea {
+      width: 100%;
+      padding: 5rem;
+      font-size: 16rem;
+   }
+
+   input,
+   textarea {
+      border-bottom: 2rem solid rgba($light-gray, 0.5);
+   }
+
+   .big-yellow-btn {
+      position: absolute;
+      right: 0;
+      margin: 2vh 1vw 0 0;
+   }
+}
+
+@media only screen and (max-width: 1024px) {
+   #contact-form {
+      position: relative;
+      width: 100%;
+      @include flex-container(flex-start, center, column);
+
+      .big-yellow-btn {
+         position: relative;
+         right: auto;
+      }
+   }
+}
