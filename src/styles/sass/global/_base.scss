@@ -163,15 +163,15 @@ button {
 
 @media only screen and (max-width: 1024px) {
    .list-container {
-      @include flex-container(center, center, column);
-
-      ul {
-         width: 50%;
-         padding-left: 10%;
-      }
+      display: block;
+      margin-left: 50%;
    }
 
    #app > .sidebar {
       display: none;
+   }
+
+   .fixed-form {
+      width: auto;
    }
 }

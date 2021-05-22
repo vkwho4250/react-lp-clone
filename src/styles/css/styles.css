@@ -223,18 +223,16 @@ body::-webkit-scrollbar {
 
 @media only screen and (max-width: 1024px) {
   .list-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
-  .list-container ul {
-    width: 50%;
-    padding-left: 10%;
+    display: block;
+    margin-left: 50%;
   }
 
   #app > .sidebar {
     display: none;
+  }
+
+  .fixed-form {
+    width: auto;
   }
 }
 .no-display {
@@ -568,7 +566,13 @@ header .floating-mountains {
 @media only screen and (max-width: 1024px) {
   .awards-list-container {
     margin-top: 5vh;
-    width: 75%;
+    width: 100%;
+    padding: 0;
+    align-items: center;
+  }
+  .awards-list-container .award {
+    width: 65%;
+    justify-content: space-between;
   }
   .awards-list-container h1 {
     width: 40%;
@@ -961,7 +965,7 @@ header .floating-mountains {
 
 @media only screen and (max-width: 1024px) {
   .option-container {
-    flex-direction: column;
+    display: block;
   }
 
   .option-column {
@@ -1309,11 +1313,11 @@ header .floating-mountains {
 }
 
 .top-slider {
-  animation: slideLeft 40s infinite linear;
+  -webkit-animation: slideLeft 40s infinite linear 1001ms;
 }
 
 .bottom-slider {
-  animation: slideRight 40s infinite linear;
+  -webkit-animation: slideRight 40s infinite linear 1001ms;
 }
 
 .slide {
@@ -1364,7 +1368,8 @@ header .floating-mountains {
   transform: translateX(-5rem);
 }
 .list-item .number {
-  min-width: 1.6vw;
+  width: 1.6vw;
+  min-width: 22rem;
 }
 .list-item h3 {
   font-weight: 300;

@@ -13,12 +13,12 @@
 
 .top-slider {
    @extend %sliders;
-   animation: slideLeft 40s infinite linear;
+   -webkit-animation: slideLeft 40s infinite linear 1001ms;
 }
 
 .bottom-slider {
    @extend %sliders;
-   animation: slideRight 40s infinite linear;
+   -webkit-animation: slideRight 40s infinite linear 1001ms;
 }
 
 .slide {
