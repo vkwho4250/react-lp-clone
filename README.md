@@ -3,7 +3,7 @@
 This application is created solely to practice creating responsive landing pages
 with [Evoxlab](https://evoxlab.com/#home) as reference. Not for commercial use.
 
-[Live Link]()
+[Live Link](https://react-lp-clone.netlify.app/)
 
 ---
 
