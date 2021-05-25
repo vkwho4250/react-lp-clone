@@ -1,7 +1,13 @@
 # React - Landing Page Clone
 
-This application is created solely to practice creating responsive landing pages
-with [Evoxlab](https://evoxlab.com/#home) as reference. Not for commercial use.
+This application is used as practice to create responsive landing pages, train my eye for details and test my ability to recreate modern webpage components and design. Not for commercial use.
+
+Reference Site: [Evoxlab](https://evoxlab.com/#home)
+
+To dos:
+
+-  start-up animation
+-  snap scroll
 
 [Live Link](https://react-lp-clone.netlify.app/)
 
