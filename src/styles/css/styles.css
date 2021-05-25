@@ -1298,7 +1298,7 @@ header .floating-mountains {
     transform: scale(3.5);
   }
 }
-.bottom-slider, .top-slider {
+.slider {
   position: relative;
   width: 200%;
   display: flex;
@@ -1313,11 +1313,11 @@ header .floating-mountains {
 }
 
 .top-slider {
-  -webkit-animation: slideLeft 40s infinite linear -1001ms;
+  -webkit-animation: slideLeft 40s infinite linear;
 }
 
 .bottom-slider {
-  -webkit-animation: slideRight 40s infinite linear -1001ms;
+  -webkit-animation: slideRight 40s infinite linear;
 }
 
 .slide {

@@ -1,7 +1,17 @@
+import { useEffect, useState } from "react";
+
 const SlidingText = ({ image }) => {
+   const [startSlide, setStartSlide] = useState(false);
+
+   useEffect(() => {
+      setTimeout(() => {
+         setStartSlide(true);
+      }, 10);
+   }, []);
+
    return (
       <div className="slider-container">
-         <div className="top-slider">
+         <div className={`slider ${startSlide ? "top-slider" : ""}`}>
             <div className="slide">
                <img
                   alt={`${image}-slider`}
@@ -17,7 +27,7 @@ const SlidingText = ({ image }) => {
                ></img>
             </div>
          </div>
-         <div className="bottom-slider">
+         <div className={`slider ${startSlide ? "bottom-slider" : ""}`}>
             <div className="slide">
                <img
                   alt={`${image}-slider`}

@@ -22,10 +22,11 @@ const ProjectPanel = ({ index, project, whichPanel, hoverPanel, controls }) => {
          ></img>
          <div className="project-details">
             <motion.h1
-               variants={Animations.textSlide}
-               initial="hidden"
+               variants={Animations.movement}
+               initial="initialY"
+               custom={30}
                animate={
-                  hoverPanel === `panel-${index + 1}` ? "active" : "hidden"
+                  hoverPanel === `panel-${index + 1}` ? "endingXY" : "initialY"
                }
                transition={{
                   duration: 0.5,
@@ -35,10 +36,11 @@ const ProjectPanel = ({ index, project, whichPanel, hoverPanel, controls }) => {
             </motion.h1>
             <h2>{project.client}</h2>
             <motion.p
-               variants={Animations.textSlide}
-               initial="hidden"
+               variants={Animations.movement}
+               initial="initialY"
+               custom={30}
                animate={
-                  hoverPanel === `panel-${index + 1}` ? "active" : "hidden"
+                  hoverPanel === `panel-${index + 1}` ? "endingXY" : "initialY"
                }
                transition={{
                   duration: 0.5,

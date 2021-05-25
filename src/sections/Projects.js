@@ -43,6 +43,7 @@ const Projects = ({ changeCurrentSection }) => {
    function whichPanel(e) {
       if (e.type === "mouseleave") {
          setHoverPanel("");
+         console.log("hover");
       } else {
          setHoverPanel(e.currentTarget.id);
       }
