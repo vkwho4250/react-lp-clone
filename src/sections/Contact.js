@@ -21,7 +21,7 @@ const Contact = ({ changeRequestOpened, changeCurrentSection }) => {
          controls.start("initialY");
          controls.start("hidden");
       }
-   }, [controls, inView]);
+   }, [controls, inView, changeCurrentSection]);
 
    return (
       <section id="contact-page" className="page-view">

@@ -19,7 +19,7 @@ const Awards = ({ changeRequestOpened, changeCurrentSection }) => {
       } else {
          controls.start("initialX");
       }
-   }, [controls, inView]);
+   }, [controls, inView, changeCurrentSection]);
 
    return (
       <section id="awards-page" className="page-view dark">

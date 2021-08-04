@@ -23,7 +23,7 @@ const Practice = ({ changeRequestOpened, changeCurrentSection }) => {
       } else {
          controls.start("initialX");
       }
-   }, [controls, inView]);
+   }, [controls, inView, changeCurrentSection]);
 
    return (
       <section id="practice-page" className="page-view">

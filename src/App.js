@@ -1,5 +1,5 @@
 import "./styles/css/styles.css";
-import { useState } from "react";
+import React, { useState } from "react";
 
 import Home from "./sections/Home";
 import Practice from "./sections/Practice";
@@ -14,68 +14,77 @@ import LeftSidebar from "./components/navbars/LeftSidebar";
 import Menu from "./components/menu/Menu";
 import Request from "./components/request/Request";
 
+export const appContext = React.createContext();
+
 const App = () => {
-   const [menuOpened, setMenuOpened] = useState(false);
-   const [requestOpened, setRequestOpened] = useState(false);
-   const [currentSection, setCurrentSection] = useState("home-page");
+  const [menuOpened, setMenuOpened] = useState(false);
+  const [requestOpened, setRequestOpened] = useState(false);
+  const [currentSection, setCurrentSection] = useState("home-page");
 
-   const changeCurrentSection = (id) => setCurrentSection(id);
-   const changeMenuOpened = () => setMenuOpened(!menuOpened);
-   const changeRequestOpened = () => setRequestOpened(!requestOpened);
+  const changeCurrentSection = (id) => setCurrentSection(id);
+  const changeMenuOpened = () => setMenuOpened(!menuOpened);
+  const changeRequestOpened = () => setRequestOpened(!requestOpened);
 
-   return (
+  const appContextValue = {
+    changeCurrentSection,
+    changeMenuOpened,
+    changeRequestOpened,
+  };
+
+  return (
+    <appContext.Provider value={appContextValue}>
       <div
-         id="app"
-         className={
-            currentSection === "awards-page" ||
-            currentSection === "projects-page"
-               ? "dark-mode"
-               : ""
-         }
+        id="app"
+        className={
+          currentSection === "awards-page" || currentSection === "projects-page"
+            ? "dark-mode"
+            : ""
+        }
       >
-         <TopNavBar changeMenuOpened={changeMenuOpened} />
+        <TopNavBar changeMenuOpened={changeMenuOpened} />
 
-         <Menu
-            changeMenuOpened={changeMenuOpened}
-            menuOpened={menuOpened}
-            changeRequestOpened={changeRequestOpened}
-            changeCurrentSection={changeCurrentSection}
-         />
-         <Request
-            changeRequestOpened={changeRequestOpened}
-            requestOpened={requestOpened}
-         />
-         <LeftSidebar changeMenuOpened={changeMenuOpened} />
-         <RightSidebar
-            changeRequestOpened={changeRequestOpened}
-            changeCurrentSection={changeCurrentSection}
-            currentSection={currentSection}
-         />
+        <Menu
+          //  changeMenuOpened={changeMenuOpened}
+          menuOpened={menuOpened}
+          //  changeRequestOpened={changeRequestOpened}
+          //  changeCurrentSection={changeCurrentSection}
+        />
+        <Request
+          changeRequestOpened={changeRequestOpened}
+          requestOpened={requestOpened}
+        />
+        <LeftSidebar changeMenuOpened={changeMenuOpened} />
+        <RightSidebar
+          changeRequestOpened={changeRequestOpened}
+          changeCurrentSection={changeCurrentSection}
+          currentSection={currentSection}
+        />
 
-         <Home changeCurrentSection={changeCurrentSection} />
-         <Practice
-            changeRequestOpened={changeRequestOpened}
-            changeCurrentSection={changeCurrentSection}
-         />
-         <Awards
-            changeRequestOpened={changeRequestOpened}
-            changeCurrentSection={changeCurrentSection}
-         />
-         <Projects changeCurrentSection={changeCurrentSection} />
-         <Services
-            changeRequestOpened={changeRequestOpened}
-            changeCurrentSection={changeCurrentSection}
-         />
-         <About
-            changeRequestOpened={changeRequestOpened}
-            changeCurrentSection={changeCurrentSection}
-         />
-         <Contact
-            changeRequestOpened={changeRequestOpened}
-            changeCurrentSection={changeCurrentSection}
-         />
+        <Home changeCurrentSection={changeCurrentSection} />
+        <Practice
+          changeRequestOpened={changeRequestOpened}
+          changeCurrentSection={changeCurrentSection}
+        />
+        <Awards
+          changeRequestOpened={changeRequestOpened}
+          changeCurrentSection={changeCurrentSection}
+        />
+        <Projects changeCurrentSection={changeCurrentSection} />
+        <Services
+          changeRequestOpened={changeRequestOpened}
+          changeCurrentSection={changeCurrentSection}
+        />
+        <About
+          changeRequestOpened={changeRequestOpened}
+          changeCurrentSection={changeCurrentSection}
+        />
+        <Contact
+          changeRequestOpened={changeRequestOpened}
+          changeCurrentSection={changeCurrentSection}
+        />
       </div>
-   );
+    </appContext.Provider>
+  );
 };
 
 export default App;

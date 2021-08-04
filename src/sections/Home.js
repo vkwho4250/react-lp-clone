@@ -13,7 +13,7 @@ const Home = ({ changeCurrentSection }) => {
       if (inView) {
          changeCurrentSection("home-page");
       }
-   }, [inView]);
+   }, [inView, changeCurrentSection]);
 
    return (
       <section id="home-page" className="page-view">

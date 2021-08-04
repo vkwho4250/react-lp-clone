@@ -29,7 +29,7 @@ const About = ({ changeRequestOpened, changeCurrentSection }) => {
       } else {
          controls.start("initialX");
       }
-   }, [controls, inView]);
+   }, [controls, inView, changeCurrentSection]);
 
    return (
       <section id="about-page" className="page-view">

@@ -28,7 +28,7 @@ const Services = ({ changeRequestOpened, changeCurrentSection }) => {
       } else {
          controls.start("initialX");
       }
-   }, [controls, inView]);
+   }, [controls, inView, changeCurrentSection]);
 
    return (
       <section id="services-page" className="page-view">
